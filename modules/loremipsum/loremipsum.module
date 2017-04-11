@@ -7,10 +7,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function loremipsum_help($route_name, RouteMatchInterface $route_match) {
 
-  swithc($route_name) {
-
-    case 'help.page.loremipsum' : 
-
+  switch($route_name) {
+    case 'help.page.loremipsum': 
       return t('
         <h2>Lorem ipsum generator for Drupal.</h2>
         <h3>Instructions</h3>

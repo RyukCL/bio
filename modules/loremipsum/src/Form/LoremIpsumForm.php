@@ -10,24 +10,19 @@ class LoremIpsumForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
   */
-
   public function getFormId() {
-
     return 'loremipsum_form';
   }
-  
+
   /**
    * {@inheritdoc}
   */
-
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     // Form constructor.
     $form = parent::buildForm($form, $form_state);
-
     //Default settings
     $form = $this->config('loremipsum.settings');
-
     //Page field title
     $form['page_title'] = array (
       '#type' => 'textfield',
@@ -35,7 +30,6 @@ class LoremIpsumForm extends ConfigFormBase {
       '#default_value' => $config->get('loremipsum.page_title'),
       '#description' => $this->t('Give your lorem ipsum page a title'),
     );
-
     //Source text field
     $form['source_text'] = array (
       '#type' => 'textarea',
@@ -51,18 +45,14 @@ class LoremIpsumForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
   */
-
   public function validateForm(array &$form, FormStateInterface $form_state) { 
-
 
   }
 
   /**
    * {@inheritdoc}
   */
-
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
    $config = $this->config('loremipsum.settings');
    $config->set('loremipsum.source_text', $form_state->getValue('source_text'));
    $config->set('loremipsum.page_title', $form_state->getValue('page_title'));

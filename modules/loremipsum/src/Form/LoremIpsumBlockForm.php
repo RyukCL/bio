@@ -15,21 +15,18 @@
     /**
      * {@inheritdoc}
     */
-
     public function getFormId() {
-
       return 'loremipsum_block_form';
     }
 
     /**
      * {@inheritdoc}
     */
-
     public function buildForm(array $form, FormStateInterface $form_state) {
+      //
+      for ($i = 1; $i <= 10; $i++) $options[$i] = $i;
 
-      $options = array_combine(range(1,10), range(1,10));
-
-    //how many paragraphs
+      //how many paragraphs
       $form['paragraphs'] = array (
         '#type' => 'select',
         '#title' => $this->t('Paragraphs'),
@@ -59,7 +56,7 @@
     * {@inheritdoc}
     */
     public function validateForm(array &$form, FormStateInterface $form_state) {
-
+      
       $phrases = $form_state->getValue('phrases');
 
       if(!is_numeric($phrases)) {

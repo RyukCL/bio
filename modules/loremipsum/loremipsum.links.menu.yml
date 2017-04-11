@@ -1,5 +1,7 @@
+
+# Define default links for this module.
 loremipsum.form:
   title: 'Lorem Ipsum settings'
   description: 'Configure settings for Lorem Ipsum module.'
-  route_name: loremipsum.form
-  parent: 'system.admin_config_development'
+  #route_name: loremipsum.form
+  #parent: 'system.admin_config_development'

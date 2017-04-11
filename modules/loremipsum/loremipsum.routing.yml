@@ -1,14 +1,15 @@
 loremipsum.generate: 
   path: 'loremipsum/generate/{paragraphs}/{phrases}'
-  defaults: 
+  defaults:
     _controller: '\Drupal\loremipsum\Controller\LoremIpsumController::generate'
-  requirements: 
-    _permissions: 'generate lorem ipsum'
+  requirements:
+    # _access: 'TRUE' for unrestricted access
+    _permission: 'generate lorem ipsum'
 
 loremipsum.form:
-  path: 'loremipsum/config/development/loremipsum'
+  path: '/admin/config/development/loremipsum'
   defaults:
     _form: 'Drupal\loremipsum\Form\LoremIpsumForm'
-    _title: 'Lorem Ipsum settings'
+    _title: 'Lorem ipsum settings'
   requirements:
-    _permissions: 'administer site configuration'
+    _permission: 'administer site configuration'

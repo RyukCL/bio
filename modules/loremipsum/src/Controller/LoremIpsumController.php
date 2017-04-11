@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @file
+ * Contains \Drupal\loremipsum\Controller\LoremIpsumController
+ */
 namespace Drupal\loremipsum\Controller;
 
 use Drupal\Core\Url;
@@ -29,7 +34,7 @@ class LoremIpsumController {
     $page_title = $config->get('loremipsum.page_title');
     $source_text = $config->get('loremipsum.source_text');
 
-    $repertory = explode(PHP_EOL, $source_text);
+    $repertory = explode(PHP_EOL, str_replace(array("\r\n", "\n\r", "\r", "\n"), PHP_EOL, $source_text);
 
     $element['#source_text'] = array();
 
